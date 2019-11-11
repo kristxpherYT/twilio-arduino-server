@@ -19,14 +19,9 @@ def tempHumData(request):
     client = Client(account_sid, auth_token)
     
     requestData = request.POST['Body']
-    temperature = Data.objects.all()[0]['temperature']
-    humidity = Data.objects.all()[0]['humidity']
+    temperature = Data.objects.all()[0].temperature
+    humidity = Data.objects.all()[0].humidity
 
-    client.messages.create(
-        body='Temperature: ' + requestData,
-        from_='whatsapp:+14155238886',
-        to='whatsapp:+593979103931'
-    )
     if (requestData == 'Temp'):
         client.messages.create(
             body='Temperature: ' + temperature,
