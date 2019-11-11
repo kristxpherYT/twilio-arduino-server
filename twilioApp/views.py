@@ -27,12 +27,12 @@ def tempHumData(request):
             body='Temperature: ' + temperature,
             from_='whatsapp:+14155238886',
             to='whatsapp:+593979103931')
-    else if (requestData == 'Hum'):
+    elif (requestData == 'Hum'):
         client.messages.create(
             body='Humidity: ' + humidity,
             from_='whatsapp:+14155238886',
             to='whatsapp:+593979103931')
-    else if (requestData == 'All'):
+    elif (requestData == 'All'):
         client.messages.create(
             body='Temperature: ' + temperature + '\nHumidity: ' + humidity,
             from_='whatsapp:+14155238886',
@@ -46,9 +46,8 @@ def tempHumData(request):
     return JsonResponse(data, safe=False)
 
 def recordData(request):
-    if (Data.objects.all()) {
+    if (Data.objects.all()):
         Data.objects.all().delete()
-    }
 
     data = Data(
         temperature=request.POST['temperature'],
