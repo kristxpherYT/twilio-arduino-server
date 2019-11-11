@@ -22,22 +22,21 @@ def tempHumData(request):
     temperature = Data.objects.all()[0]['temperature']
     humidity = Data.objects.all()[0]['humidity']
 
-    if (requestData == 'Temp') {
+    if (requestData == 'Temp'):
         client.messages.create(
             body='Temperature: ' + temperature,
             from_='whatsapp:+14155238886',
             to='whatsapp:+593979103931')
-    } else if (requestData == 'Hum') {
+    else if (requestData == 'Hum'):
         client.messages.create(
             body='Humidity: ' + humidity,
             from_='whatsapp:+14155238886',
             to='whatsapp:+593979103931')
-    } else if (requestData == 'All') {
+    else if (requestData == 'All'):
         client.messages.create(
             body='Temperature: ' + temperature + '\nHumidity: ' + humidity,
             from_='whatsapp:+14155238886',
             to='whatsapp:+593979103931')
-    }
 
     data = {
         'temperature': temperature,
