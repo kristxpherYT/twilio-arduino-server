@@ -47,8 +47,6 @@ def tempHumData(request):
 
 @csrf_exempt
 def recordData(request):
-    Data.objects.all().delete()
-
     data = Data(
         temperature=request.POST['temperature'],
         humidity=request.POST['humidity']
