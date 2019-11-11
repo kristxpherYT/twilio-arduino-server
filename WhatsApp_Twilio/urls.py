@@ -16,9 +16,10 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from twilioApp.views import tempHumData
+from twilioApp import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^data/', tempHumData, name='data'),
+    url(r'^data/', views.tempHumData, name='data'),
+    url(r'^record/', views.recordData, name='record'),
 ]
