@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from twilio.rest import Client
-from models import Data
+from twilioApp.models import Data
 
 # Create your views here.
 @csrf_exempt
