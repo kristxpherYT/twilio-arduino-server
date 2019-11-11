@@ -21,5 +21,5 @@ from twilioApp import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^data/', views.tempHumData, name='data'),
-    url(r'^record/', views.recordData, name='record'),
+    url(r'^', views.recordData, name='record'),
 ]

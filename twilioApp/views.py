@@ -24,17 +24,17 @@ def tempHumData(request):
 
     if (requestData == 'Temp'):
         client.messages.create(
-            body='Temperature: ' + temperature,
+            body='Temperature: ' + temperature + ' °C',
             from_='whatsapp:+14155238886',
             to='whatsapp:+593979103931')
     elif (requestData == 'Hum'):
         client.messages.create(
-            body='Humidity: ' + humidity,
+            body='Humidity: ' + humidity + ' %',
             from_='whatsapp:+14155238886',
             to='whatsapp:+593979103931')
     elif (requestData == 'All'):
         client.messages.create(
-            body='Temperature: ' + temperature + '\nHumidity: ' + humidity,
+            body='Temperature: ' + temperature + ' °C\nHumidity: ' + humidity + ' %',
             from_='whatsapp:+14155238886',
             to='whatsapp:+593979103931')
 
