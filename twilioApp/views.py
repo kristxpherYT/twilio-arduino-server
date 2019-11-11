@@ -19,8 +19,8 @@ def tempHumData(request):
     client = Client(account_sid, auth_token)
     
     requestData = request.POST['Body']
-    temperature = Data.objects.all()[0].temperature
-    humidity = Data.objects.all()[0].humidity
+    temperature = Data.objects.last().temperature
+    humidity = Data.objects.last().humidity
 
     if (requestData == 'Temp'):
         client.messages.create(
