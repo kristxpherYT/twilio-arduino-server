@@ -45,6 +45,7 @@ def tempHumData(request):
 
     return JsonResponse(data, safe=False)
 
+@csrf_exempt
 def recordData(request):
     if (Data.objects.all()):
         Data.objects.all().delete()
