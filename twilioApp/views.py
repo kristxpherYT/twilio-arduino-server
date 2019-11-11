@@ -17,16 +17,16 @@ def tempHumData(request):
   
     client = Client(account_sid, auth_token)
     
-    # temperature = request.POST['']
+    temperature = request.POST
 
     data = {
         'temperature': request.POST,
         'humidity': 'humidity'
     }
 
-    # client.messages.create(
-    #     body='Temperature: ' + temperature + '\nHumidity: ' + humidity,
-    #     from_='whatsapp:+14155238886',
-    #     to='whatsapp:+593979103931')
+    client.messages.create(
+        body='Temperature: ' + temperature,
+        from_='whatsapp:+14155238886',
+        to='whatsapp:+593979103931')
 
     return JsonResponse(data, safe=False)
