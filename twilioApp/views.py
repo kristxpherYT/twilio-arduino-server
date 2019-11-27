@@ -11,10 +11,10 @@ from twilioApp.models import Data
 @csrf_exempt
 def tempHumData(request):
     # Your Account Sid and Auth Token from twilio.com/console
+
+    account_sid = '<TWILIO SID>'
   
-    account_sid = 'AC26f748d29bce5289dfbe6ea9d2e9faee'
-  
-    auth_token = '3a8fc6e6a07774fde54ab518b1c20743'
+    auth_token = '<TWILIO AUTH TOKEN>'
   
     client = Client(account_sid, auth_token)
     
@@ -25,18 +25,18 @@ def tempHumData(request):
     if (requestData == 'Temp'):
         client.messages.create(
             body='Temperature: ' + temperature + ' °C',
-            from_='whatsapp:+14155238886',
-            to='whatsapp:+593979103931')
+            from_='whatsapp:<TWILIO SANDBOX NUMBER>',
+            to='whatsapp:<YOUR WHATSAPP NUMBER>')
     elif (requestData == 'Hum'):
         client.messages.create(
             body='Humidity: ' + humidity + ' %',
-            from_='whatsapp:+14155238886',
-            to='whatsapp:+593979103931')
+            from_='whatsapp:<TWILIO SANDBOX NUMBER>',
+            to='whatsapp:<YOUR WHATSAPP NUMBER>')
     elif (requestData == 'All'):
         client.messages.create(
             body='Temperature: ' + temperature + ' °C\nHumidity: ' + humidity + ' %',
-            from_='whatsapp:+14155238886',
-            to='whatsapp:+593979103931')
+            from_='whatsapp:<TWILIO SANDBOX NUMBER>',
+            to='whatsapp:<YOUR WHATSAPP NUMBER>')
 
     data = {
         'temperature': temperature,
